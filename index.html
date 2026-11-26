@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<!-- Portafolio Premium Generado para: Porfolio (Cliente: Miguel bellido) | Repositorio: porfolio -->
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Porfolio — Portafolio & Dirección Visual</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0A;
+      --surface: #141414;
+      --text: #F5F5F5;
+      --muted: #878787;
+      --stroke: #1F1F1F;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+    }
+    .font-display {
+      font-family: 'Instrument Serif', Georgia, serif;
+    }
+    .font-sans {
+      font-family: 'Inter', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .accent-gradient {
+      background: linear-gradient(90deg, #89AACC 0%, #4E85BF 100%);
+    }
+    .accent-border:hover {
+      border-color: #89AACC;
+      box-shadow: 0 0 20px rgba(137, 170, 204, 0.25);
+    }
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 22s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+    /* Estricta Regla: Video 100% limpio sin ningún tipo de overlay */
+    .hero-video-clean {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="selection:bg-[#4E85BF] selection:text-white">
+
+  <!-- 1. PANTALLA DE CARGA (LOADING SCREEN) -->
+  <div id="loading-screen" class="fixed inset-0 z-[100] bg-[#0A0A0A] flex flex-col justify-between p-8 sm:p-14 transition-opacity duration-700 ease-out">
+    <div class="flex justify-between items-start">
+      <span class="text-xs uppercase tracking-[0.25em] font-mono text-[#878787]">Est. 2026 / Santiago de Chile</span>
+      <span class="text-xs font-mono text-[#878787] tracking-widest">[PORTFOLIO_SYSTEM]</span>
+    </div>
+    <div class="text-center my-auto">
+      <div id="loader-keyword" class="text-2xl sm:text-5xl font-display italic text-[#F5F5F5] transition-all duration-300">
+        Fotógrafo Comercial
+      </div>
+    </div>
+    <div class="flex justify-between items-end">
+      <div class="text-xs font-mono text-[#878787] tracking-wider hidden sm:block">
+        CARGANDO SISTEMA VISUAL...
+      </div>
+      <div id="loader-counter" class="text-6xl sm:text-8xl font-mono text-[#F5F5F5] font-light tracking-tighter">
+        000
+      </div>
+    </div>
+    <!-- Barra de Progreso Acento -->
+    <div class="absolute bottom-0 left-0 h-[2px] w-full bg-[#1F1F1F]">
+      <div id="loader-bar" class="h-full accent-gradient transition-all duration-75" style="width: 0%"></div>
+    </div>
+  </div>
+
+  <!-- 3. BARRA DE NAVEGACIÓN FLOTANTE (NAVBAR) -->
+  <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-5xl rounded-full bg-[#141414]/80 backdrop-blur-md border border-[#1F1F1F] px-5 py-3 flex items-center justify-between shadow-2xl transition-all duration-300">
+    <!-- Izquierda: Monograma circular minimalista con acento -->
+    <a href="#" class="flex items-center gap-3 group">
+      <div class="size-9 rounded-full p-[1.5px] accent-gradient flex items-center justify-center transition-transform group-hover:scale-105">
+        <div class="size-full rounded-full bg-[#0A0A0A] flex items-center justify-center font-display italic text-white text-sm font-bold">
+          P
+        </div>
+      </div>
+      <span class="hidden md:inline font-sans text-xs font-medium tracking-wider uppercase text-[#F5F5F5] group-hover:text-white">
+        Porfolio
+      </span>
+    </a>
+
+    <!-- Enlaces con cápsulas sutiles -->
+    <div class="hidden sm:flex items-center gap-1 text-xs font-sans text-[#878787]">
+      <a href="#proyectos" class="px-3.5 py-1.5 rounded-full hover:text-[#F5F5F5] hover:bg-[#1F1F1F]/60 transition">Proyectos</a>
+      <a href="#bitacora" class="px-3.5 py-1.5 rounded-full hover:text-[#F5F5F5] hover:bg-[#1F1F1F]/60 transition">Bitácora</a>
+      <a href="#laboratorio" class="px-3.5 py-1.5 rounded-full hover:text-[#F5F5F5] hover:bg-[#1F1F1F]/60 transition">Laboratorio</a>
+      <a href="#contacto" class="px-3.5 py-1.5 rounded-full hover:text-[#F5F5F5] hover:bg-[#1F1F1F]/60 transition">Contacto</a>
+    </div>
+
+    <!-- Derecha: Botón Say Hi / Escribir con borde brillante y ArrowUpRight -->
+    <a href="mailto:contacto@alejandrosilva.com" class="group relative px-4 py-2 rounded-full bg-[#0A0A0A] border border-[#1F1F1F] hover:border-[#89AACC] text-xs font-sans font-medium text-white inline-flex items-center gap-2 transition-all duration-300">
+      <span>Escribir</span>
+      <svg class="w-3.5 h-3.5 text-[#89AACC] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="7" y1="17" x2="17" y2="7"></line>
+        <polyline points="7 7 17 7 17 17"></polyline>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- 2. SECCIÓN HERO (FONDO DE VIDEO CINEMATOGRÁFICO) -->
+  <!-- Estricto: Video limpio sin overlay oscuro, sin tintes, sin viñetas, sin blur -->
+  <section class="relative h-screen min-h-[640px] w-full overflow-hidden flex flex-col justify-end">
+    <video autoplay muted loop playsinline class="hero-video-clean">
+      <source src="https://res.cloudinary.com/deaqhxfwf/video/upload/v1781826138/A_cinematic_dolly_zoom_shot_moving_forward_into_a_-1781826029435_byivrw.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Contenido Frontal Limpio sobre el video (z-10) -->
+    <div class="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 pb-16 pt-32 space-y-4">
+      <div class="inline-flex items-center gap-2">
+        <span class="size-2 rounded-full bg-[#89AACC] animate-pulse"></span>
+        <span class="text-xs uppercase tracking-[0.3em] font-mono text-white/95 drop-shadow-md">
+          SANTIAGO DE CHILE / PORTFOLIO '26
+        </span>
+      </div>
+
+      <h1 class="font-display italic text-6xl sm:text-8xl lg:text-9xl text-white font-normal leading-[0.92] drop-shadow-lg tracking-tight">
+        Porfolio
+      </h1>
+
+      <div class="flex items-center gap-3 text-sm sm:text-base font-sans font-medium text-white drop-shadow">
+        <span class="text-[#89AACC] font-mono">/</span>
+        <span id="hero-rotating-role" class="tracking-wider uppercase font-mono text-white/90">
+          Fotógrafo Comercial
+        </span>
+      </div>
+
+      <p class="max-w-xl text-sm sm:text-base text-white/90 leading-relaxed font-light drop-shadow">
+        Fotografía profesional y dirección visual para marcas, editoriales de moda y proyectos de autor. Soluciones estéticas de excelencia con enfoque atemporal.
+      </p>
+
+      <div class="pt-4 flex flex-wrap items-center gap-4">
+        <a href="#proyectos" class="px-7 py-3.5 rounded-full bg-white text-black hover:bg-neutral-200 transition font-sans text-xs uppercase tracking-wider font-semibold inline-flex items-center gap-2 shadow-xl">
+          <span>Ver Proyectos</span>
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+        <a href="mailto:contacto@alejandrosilva.com" class="px-7 py-3.5 rounded-full bg-[#141414]/90 backdrop-blur border border-[#1F1F1F] text-white hover:border-[#89AACC] transition font-sans text-xs uppercase tracking-wider font-semibold inline-flex items-center gap-2">
+          <span>Agendar Sesión</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PROYECTOS DESTACADOS (SELECTED WORKS - BENTO GRID) -->
+  <section id="proyectos" class="py-28 px-6 sm:px-12 max-w-7xl mx-auto space-y-12">
+    <div class="space-y-3">
+      <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#89AACC]">SELECCIÓN DE TRABAJOS</span>
+      <h2 class="font-display italic text-4xl sm:text-6xl text-white font-normal">Proyectos Destacados</h2>
+      <p class="text-sm text-[#878787] max-w-2xl leading-relaxed">Selección de proyectos destacados y fotografía de encargo, combinando precisión técnica con dirección de arte contemporánea.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      <!-- Obra 1 (col 7) -->
+      <div class="md:col-span-7 group relative h-[440px] rounded-3xl overflow-hidden bg-[#141414] border border-[#1F1F1F] cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=1200&q=85" alt="Editorial Vogue" class="size-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+        <div class="absolute inset-0 bg-[#0A0A0A]/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+          <div class="flex justify-between items-end">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-[#89AACC]">Campaña Editorial • 2026</span>
+              <h3 class="font-display italic text-3xl text-white mt-1">L'Ombre Silencieuse</h3>
+              <p class="text-xs text-[#878787] mt-1 font-sans">Dirección de arte contemporánea en blanco y negro de alto contraste.</p>
+            </div>
+            <div class="size-10 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Obra 2 (col 5) -->
+      <div class="md:col-span-5 group relative h-[440px] rounded-3xl overflow-hidden bg-[#141414] border border-[#1F1F1F] cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=85" alt="Arquitectura Brutalista" class="size-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+        <div class="absolute inset-0 bg-[#0A0A0A]/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+          <div class="flex justify-between items-end">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-[#89AACC]">Arquitectura • Santiago</span>
+              <h3 class="font-display italic text-3xl text-white mt-1">Monolito Urbano</h3>
+              <p class="text-xs text-[#878787] mt-1 font-sans">Geometría de hormigón y luz zenital en formato medio.</p>
+            </div>
+            <div class="size-10 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Obra 3 (col 5) -->
+      <div class="md:col-span-5 group relative h-[440px] rounded-3xl overflow-hidden bg-[#141414] border border-[#1F1F1F] cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=85" alt="Retrato de Moda" class="size-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+        <div class="absolute inset-0 bg-[#0A0A0A]/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+          <div class="flex justify-between items-end">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-[#89AACC]">Retratista • Haute Couture</span>
+              <h3 class="font-display italic text-3xl text-white mt-1">Retrato de Autor</h3>
+              <p class="text-xs text-[#878787] mt-1 font-sans">Estudio lumínico de precisión con paleta atemporal.</p>
+            </div>
+            <div class="size-10 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Obra 4 (col 7) -->
+      <div class="md:col-span-7 group relative h-[440px] rounded-3xl overflow-hidden bg-[#141414] border border-[#1F1F1F] cursor-pointer">
+        <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85" alt="Alta Joyería" class="size-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+        <div class="absolute inset-0 bg-[#0A0A0A]/60 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+          <div class="flex justify-between items-end">
+            <div>
+              <span class="text-[10px] font-mono uppercase tracking-widest text-[#89AACC]">Comercial • Alta Joyería</span>
+              <h3 class="font-display italic text-3xl text-white mt-1">Reflexiones de Oro Puro</h3>
+              <p class="text-xs text-[#878787] mt-1 font-sans">Macro óptica de precisión para marcas de lujo internacional.</p>
+            </div>
+            <div class="size-10 rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ARTÍCULOS Y REFLEXIONES (JOURNAL / BITÁCORA) -->
+  <section id="bitacora" class="py-24 px-6 sm:px-12 max-w-7xl mx-auto space-y-10 border-t border-[#1F1F1F]">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#89AACC]">PENSAMIENTO CRÍTICO</span>
+        <h2 class="font-display italic text-4xl sm:text-5xl text-white font-normal">Bitácora & Reflexiones</h2>
+        <p class="text-sm text-[#878787] max-w-xl">Artículos técnicos y conceptuales sobre dirección de arte, esquemas de iluminación de estudio y teoría de la composición fotográfica.</p>
+      </div>
+      <span class="text-xs font-mono text-[#878787]">VOL. 2026 / CHILE</span>
+    </div>
+
+    <div class="space-y-4">
+      <article class="group p-6 rounded-2xl bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/50 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-6 cursor-pointer">
+        <div class="flex items-center gap-6">
+          <div class="size-16 rounded-xl overflow-hidden bg-[#0A0A0A] shrink-0 border border-[#1F1F1F]">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=400&q=80" alt="Dirección de Arte" class="size-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-[11px] font-mono text-[#878787]">
+              <span class="text-[#89AACC]">DIRECCIÓN DE ARTE</span>
+              <span>•</span>
+              <span>4 min de lectura</span>
+            </div>
+            <h3 class="font-display italic text-xl sm:text-2xl text-white mt-1 group-hover:text-[#89AACC] transition">
+              El valor de la textura tangible en la fotografía de moda contemporánea
+            </h3>
+          </div>
+        </div>
+        <div class="shrink-0 flex items-center gap-2 text-xs font-mono text-[#878787] group-hover:text-white transition">
+          <span>LEER ENSAYO</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </article>
+
+      <article class="group p-6 rounded-2xl bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/50 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-6 cursor-pointer">
+        <div class="flex items-center gap-6">
+          <div class="size-16 rounded-xl overflow-hidden bg-[#0A0A0A] shrink-0 border border-[#1F1F1F]">
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80" alt="Esquemas de Iluminación" class="size-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-[11px] font-mono text-[#878787]">
+              <span class="text-[#89AACC]">TÉCNICA LUMÍNICA</span>
+              <span>•</span>
+              <span>6 min de lectura</span>
+            </div>
+            <h3 class="font-display italic text-xl sm:text-2xl text-white mt-1 group-hover:text-[#89AACC] transition">
+              Iluminación continua de tungsteno frente a estroboscópica de alta velocidad en estudio
+            </h3>
+          </div>
+        </div>
+        <div class="shrink-0 flex items-center gap-2 text-xs font-mono text-[#878787] group-hover:text-white transition">
+          <span>LEER ENSAYO</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </article>
+
+      <article class="group p-6 rounded-2xl bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/50 transition-all duration-300 flex flex-col sm:flex-row sm:items-center justify-between gap-6 cursor-pointer">
+        <div class="flex items-center gap-6">
+          <div class="size-16 rounded-xl overflow-hidden bg-[#0A0A0A] shrink-0 border border-[#1F1F1F]">
+            <img src="https://images.unsplash.com/photo-1488161628813-04466f872be2?auto=format&fit=crop&w=400&q=80" alt="Composición Fotográfica" class="size-full object-cover group-hover:scale-110 transition-transform duration-500" />
+          </div>
+          <div>
+            <div class="flex items-center gap-3 text-[11px] font-mono text-[#878787]">
+              <span class="text-[#89AACC]">COMPOSICIÓN</span>
+              <span>•</span>
+              <span>5 min de lectura</span>
+            </div>
+            <h3 class="font-display italic text-xl sm:text-2xl text-white mt-1 group-hover:text-[#89AACC] transition">
+              El espacio negativo y la tensión visual en el encargo comercial moderno
+            </h3>
+          </div>
+        </div>
+        <div class="shrink-0 flex items-center gap-2 text-xs font-mono text-[#878787] group-hover:text-white transition">
+          <span>LEER ENSAYO</span>
+          <svg class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. LABORATORIO VISUAL (EXPLORATIONS & LIGHTBOX) -->
+  <section id="laboratorio" class="py-24 px-6 sm:px-12 max-w-7xl mx-auto space-y-10 border-t border-[#1F1F1F]">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+      <div class="space-y-2">
+        <span class="text-xs font-mono uppercase tracking-[0.25em] text-[#89AACC]">I+D FOTOGRÁFICO</span>
+        <h2 class="font-display italic text-4xl sm:text-5xl text-white font-normal">Laboratorio Visual</h2>
+        <p class="text-sm text-[#878787] max-w-xl">Pruebas técnicas continuas con lentes de colección, dinámicas de iluminación de estudio y procesos de revelado digital.</p>
+      </div>
+      <span class="text-xs font-mono text-[#878787]">HAZ CLIC PARA ABRIR LIGHTBOX</span>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div onclick="openLightbox('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1400&q=90', 'Prueba Óptica Anamórfica 50mm f/1.2', 'Lente Zeiss Master Prime • Revelado Digital 16-bit')" class="group cursor-pointer rounded-2xl overflow-hidden bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/60 transition-all duration-300">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=600&q=80" alt="Exploración Óptica" class="size-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4 space-y-1">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-[#89AACC]">EXP. 01 / ANAMÓRFICA</span>
+          <h4 class="font-display italic text-lg text-white">Distorsión Cinemática</h4>
+        </div>
+      </div>
+
+      <div onclick="openLightbox('https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=1400&q=90', 'Retrato Documental en Luz Disponible', 'Leica M11 Monochrom • Summilux 35mm f/1.4')" class="group cursor-pointer rounded-2xl overflow-hidden bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/60 transition-all duration-300">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&w=600&q=80" alt="Retrato Documental" class="size-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4 space-y-1">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-[#89AACC]">EXP. 02 / LEICA MONOCHROM</span>
+          <h4 class="font-display italic text-lg text-white">Gradación Tonal 35mm</h4>
+        </div>
+      </div>
+
+      <div onclick="openLightbox('https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=1400&q=90', 'Estudio Cromático & Dispersión Lumínica', 'Hasselblad H6D-100c • Iluminación Broncolor Pulso G')" class="group cursor-pointer rounded-2xl overflow-hidden bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/60 transition-all duration-300">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=600&q=80" alt="Estudio Cromático" class="size-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4 space-y-1">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-[#89AACC]">EXP. 03 / HASSELBLAD</span>
+          <h4 class="font-display italic text-lg text-white">Cromatismo en Estudio</h4>
+        </div>
+      </div>
+
+      <div onclick="openLightbox('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=90', 'Texturas Orgánicas & Movimiento Cinético', 'Velocidad de obturación lenta 1/8s • Formato Medio')" class="group cursor-pointer rounded-2xl overflow-hidden bg-[#141414] border border-[#1F1F1F] hover:border-[#89AACC]/60 transition-all duration-300">
+        <div class="aspect-[3/4] overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Movimiento Cinético" class="size-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="p-4 space-y-1">
+          <span class="text-[10px] font-mono uppercase tracking-wider text-[#89AACC]">EXP. 04 / DINÁMICA</span>
+          <h4 class="font-display italic text-lg text-white">Movimiento Cinético</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX MODAL REFINADO -->
+  <div id="lightbox-modal" class="fixed inset-0 z-[99] bg-[#0A0A0A]/95 backdrop-blur-md hidden flex flex-col justify-between p-6 sm:p-12 transition-all duration-300">
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <span class="size-2 rounded-full bg-[#89AACC]"></span>
+        <span class="text-xs font-mono text-[#878787] uppercase tracking-widest">INSPECCIÓN DE LABORATORIO</span>
+      </div>
+      <button onclick="closeLightbox()" class="size-11 rounded-full bg-[#141414] border border-[#1F1F1F] hover:border-white text-white flex items-center justify-center transition">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="max-h-[72vh] my-auto flex justify-center items-center">
+      <img id="lightbox-img" src="" alt="Ampliación" class="max-h-[70vh] max-w-full rounded-2xl object-contain shadow-2xl border border-[#1F1F1F]" />
+    </div>
+    <div class="flex flex-col sm:flex-row justify-between items-baseline border-t border-[#1F1F1F] pt-4">
+      <h3 id="lightbox-title" class="font-display italic text-2xl text-white">Título de Exploración</h3>
+      <p id="lightbox-meta" class="text-xs font-mono text-[#878787] mt-1 sm:mt-0">Detalles de Cámara</p>
+    </div>
+  </div>
+
+  <!-- 7. FOOTER DE CONVERSIÓN Y CONTACTO (CONTACTFOOTER) -->
+  <footer id="contacto" class="relative overflow-hidden border-t border-[#1F1F1F] pt-20 pb-12 bg-[#0A0A0A]">
+    <!-- Marquee Continuo e Infinito -->
+    <div class="w-full overflow-hidden border-b border-[#1F1F1F] pb-10">
+      <div class="animate-marquee whitespace-nowrap text-3xl sm:text-5xl lg:text-7xl font-display italic text-[#1F1F1F] hover:text-white/20 transition-colors duration-500">
+        <span class="mx-6">FOTOGRAFÍA COMERCIAL • DIRECCIÓN DE ARTE • PUBLICIDAD •</span>
+        <span class="mx-6">FOTOGRAFÍA COMERCIAL • DIRECCIÓN DE ARTE • PUBLICIDAD •</span>
+        <span class="mx-6">FOTOGRAFÍA COMERCIAL • DIRECCIÓN DE ARTE • PUBLICIDAD •</span>
+        <span class="mx-6">FOTOGRAFÍA COMERCIAL • DIRECCIÓN DE ARTE • PUBLICIDAD •</span>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-12 py-20 flex flex-col items-center text-center space-y-10">
+      <div class="space-y-3">
+        <span class="text-xs font-mono uppercase tracking-[0.3em] text-[#89AACC]">AGENDA ABIERTA</span>
+        <h2 class="font-display italic text-5xl sm:text-7xl lg:text-8xl text-white font-normal">
+          Iniciemos una conversación visual.
+        </h2>
+        <p class="text-sm text-[#878787] max-w-md mx-auto leading-relaxed font-light">
+          Disponible para comisiones comerciales, dirección de arte editorial y proyectos de autor desde Santiago de Chile al mundo.
+        </p>
+      </div>
+
+      <!-- CTA Circular Interactivo -->
+      <a href="mailto:contacto@alejandrosilva.com" class="size-36 sm:size-48 rounded-full border border-[#1F1F1F] bg-[#141414] hover:scale-105 hover:border-[#89AACC] transition-all duration-500 flex flex-col items-center justify-center group shadow-2xl">
+        <span class="font-display italic text-3xl sm:text-4xl text-white group-hover:text-[#89AACC] transition">
+          Escribir
+        </span>
+        <span class="text-[10px] font-mono uppercase tracking-widest text-[#878787] mt-1 flex items-center gap-1 group-hover:text-white transition">
+          <span>contacto@alejandrosilva.com</span>
+          <svg class="w-3 h-3 text-[#89AACC]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </span>
+      </a>
+
+      <!-- Franja del Fin: Derechos y Luz Verde Titilante -->
+      <div class="w-full pt-16 border-t border-[#1F1F1F] flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-mono text-[#878787]">
+        <div class="flex items-center gap-2.5">
+          <span class="size-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span class="text-[#F5F5F5]">Agenda abierta para proyectos 2026</span>
+        </div>
+        <div>
+          © 2026 Porfolio. Todos los derechos reservados.
+        </div>
+        <div>
+          Desarrollado con excelencia por <strong>Agencia Miguel Bellido AI</strong>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS DE INTERACCIÓN, ANIMACIÓN Y LIGHTBOX -->
+  <script>
+    const rolesList = ["Fotógrafo Comercial","Director de Arte","Retratista de Moda","Fotógrafo Documental"];
+    let currentRoleIndex = 0;
+    const loaderCounter = document.getElementById('loader-counter');
+    const loaderBar = document.getElementById('loader-bar');
+    const loaderKeyword = document.getElementById('loader-keyword');
+    const loadingScreen = document.getElementById('loading-screen');
+    const heroRotatingRole = document.getElementById('hero-rotating-role');
+
+    const duration = 2700;
+    const startTime = performance.now();
+
+    function updateLoader(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const val = Math.floor(progress * 100);
+      loaderCounter.innerText = val.toString().padStart(3, '0');
+      loaderBar.style.width = (progress * 100) + '%';
+
+      const roleIdx = Math.min(Math.floor(elapsed / 900), rolesList.length - 1);
+      if (loaderKeyword && rolesList[roleIdx]) {
+        loaderKeyword.innerText = rolesList[roleIdx];
+      }
+
+      if (progress < 1) {
+        requestAnimationFrame(updateLoader);
+      } else {
+        setTimeout(() => {
+          loadingScreen.style.opacity = '0';
+          setTimeout(() => {
+            loadingScreen.style.display = 'none';
+          }, 700);
+        }, 150);
+      }
+    }
+    requestAnimationFrame(updateLoader);
+
+    setInterval(() => {
+      currentRoleIndex = (currentRoleIndex + 1) % rolesList.length;
+      if (heroRotatingRole) {
+        heroRotatingRole.style.opacity = '0';
+        setTimeout(() => {
+          heroRotatingRole.innerText = rolesList[currentRoleIndex];
+          heroRotatingRole.style.opacity = '1';
+        }, 300);
+      }
+    }, 2500);
+
+    function openLightbox(imgUrl, title, meta) {
+      document.getElementById('lightbox-img').src = imgUrl;
+      document.getElementById('lightbox-title').innerText = title;
+      document.getElementById('lightbox-meta').innerText = meta;
+      document.getElementById('lightbox-modal').classList.remove('hidden');
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox-modal').classList.add('hidden');
+    }
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
