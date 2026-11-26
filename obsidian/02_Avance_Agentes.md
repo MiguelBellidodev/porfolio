@@ -1,5 +1,5 @@
 # Feedback Recibido de Miguel Bellido
 
-- **Fecha:** 03:12 p. m. ART
-- **Orden:** "quiero iconos de los skills"
+- **Fecha:** 03:23 p. m. ART
+- **Orden:** "hacer commit"
 - **Estado:** En proceso de aplicación por el equipo.
