@@ -1,5 +1,5 @@
 # Feedback Recibido de Miguel Bellido
 
-- **Fecha:** 02:54 p. m. ART
-- **Orden:** "esta bien , cambia la paleta de colores por un azul marino y que el  estilo sea minimalista con iconos de las tecnologias que manejan"
+- **Fecha:** 02:58 p. m. ART
+- **Orden:** "avancen con los cambios que les pedi !"
 - **Estado:** En proceso de aplicación por el equipo.
